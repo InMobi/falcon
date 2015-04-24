@@ -296,6 +296,7 @@
                                 <exclude>**/maven-eclipse.xml</exclude>
                                 <exclude>**/.externalToolBuilders/**</exclude>
                                 <exclude>html5-ui/**</exclude>
+                                <exclude>*.log</exclude>
                             </excludes>
                         </configuration>
                         <executions>
