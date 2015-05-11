@@ -27,6 +27,8 @@ Branch: 0.6.1 (Proposed Release Version: 0.6.1)
   INCOMPATIBLE CHANGES
 
   NEW FEATURES
+   FALCON-1182 Remove reference to com.google.code.findbugs:annotations(Shaik Idris Ali)
+
    FALCON-1091 Monitoring plugin that registers catalog partition - code
    (Suhas Vasu / PallaviRao / Shwetha GS via Suhas Vasu)
 
@@ -160,6 +162,12 @@ Branch: 0.6.1 (Proposed Release Version: 0.6.1)
    (Suhas vasu)
 
   BUG FIXES
+   FALCON-1162 Cluster submit succeeds when staging HDFS dir does not
+   have 777 (ALL) permission (Venkat Ramachandran via Suhas Vasu)
+
+   FALCON-1161 Test case feedFeedBasePathExists fails intermittently
+   (Suhas Vasu)
+
    FALCON-1154 Replication is broken (Sowmya Ramesh via Suhas Vasu)
 
    FALCON-1159 Falcon build is broken (Suhas Vasu)
