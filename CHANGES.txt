@@ -27,6 +27,8 @@ Branch: 0.6.1 (Proposed Release Version: 0.6.1)
   INCOMPATIBLE CHANGES
 
   NEW FEATURES
+   FALCON-1182 Remove reference to com.google.code.findbugs:annotations(Shaik Idris Ali)
+
    FALCON-1091 Monitoring plugin that registers catalog partition - code
    (Suhas Vasu / PallaviRao / Shwetha GS via Suhas Vasu)
 
@@ -38,6 +40,13 @@ Branch: 0.6.1 (Proposed Release Version: 0.6.1)
    FALCON-822 Add reverse look up API (Ajay Yadava via Suhas Vasu)
 
   IMPROVEMENTS
+
+   FALCON-1225 remove text line containing "Copyright" from regression 
+   log4j.properties(Samarth Gupta)
+
+   FALCON-1220 Exclude downloaded directories from falcon-ui modules
+   (Shaik Idris Ali)
+
    FALCON-1158 Rename the parameter "pattern" in LIST API to "nameseq"
    (Ying Zheng via Suhas Vasu)
 
@@ -160,6 +169,21 @@ Branch: 0.6.1 (Proposed Release Version: 0.6.1)
    (Suhas vasu)
 
   BUG FIXES
+   FALCON-1238 Add apache license header to .less css in falcon-ui/app
+   (Shaik Idris Ali)
+
+   FALCON-1224 cannot build falcon - codehaus close service and repo 
+   - fail error 503 (Suhas Vasu via Shaik Idris Ali)
+
+   FALCON-1195 ClusterEntityParserTest fails intermittently. 
+   (Balu Vellanki via Shaik Idris Ali)
+
+   FALCON-1162 Cluster submit succeeds when staging HDFS dir does not
+   have 777 (ALL) permission (Venkat Ramachandran via Suhas Vasu)
+
+   FALCON-1161 Test case feedFeedBasePathExists fails intermittently
+   (Suhas Vasu)
+
    FALCON-1154 Replication is broken (Sowmya Ramesh via Suhas Vasu)
 
    FALCON-1159 Falcon build is broken (Suhas Vasu)
