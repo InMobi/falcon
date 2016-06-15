@@ -161,7 +161,7 @@ public final class ConfigurationStore implements FalconService {
             final ConcurrentHashMap<String, Entity> entityMap = dictionary.get(type);
             FileStatus[] files = fs.globStatus(new Path(storePath, type.name() + Path.SEPARATOR + "*"));
             if (files != null) {
-                final ExecutorService service = Executors.newFixedThreadPool(100);
+                final ExecutorService service = Executors.newFixedThreadPool(200);
                 for (final FileStatus file : files) {
                     service.execute(new Runnable() {
                         @Override
