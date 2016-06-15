@@ -180,7 +180,7 @@ public final class ConfigurationStore implements FalconService {
                     });
                 }
                 service.shutdown();
-                if (service.awaitTermination(10, TimeUnit.MINUTES)) {
+                if (service.awaitTermination(2, TimeUnit.HOURS)) {
                     LOG.info("Restored Configurations for entity type: {} ", type.name());
                 } else {
                     LOG.warn("Time out happened while waiting for all threads to finish while restoring entities "
