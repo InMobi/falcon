@@ -182,7 +182,7 @@ public class OozieWorkflowEngine extends AbstractWorkflowEngine {
                 }
 
                 //Do dryRun of coords before schedule as schedule is asynchronous
-                LOG.info("The properties passed to oozie are: {}", properties.stringPropertyNames().toString());
+                LOG.debug("The properties passed to oozie are: {}", properties.stringPropertyNames().toString());
                 dryRunInternal(cluster, new Path(properties.getProperty(OozieEntityBuilder.ENTITY_PATH)), skipDryRun);
                 scheduleEntity(clusterName, properties, entity);
             }
