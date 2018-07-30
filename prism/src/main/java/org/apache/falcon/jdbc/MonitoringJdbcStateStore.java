@@ -31,12 +31,16 @@ import org.apache.falcon.persistence.PersistenceConstants;
 import org.apache.falcon.persistence.ProcessInstanceInfoBean;
 import org.apache.falcon.persistence.ResultNotFoundException;
 import org.apache.falcon.service.FalconJPAService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
 * StateStore for MonitoringEntity and PendingEntityInstances.
 */
 
 public class MonitoringJdbcStateStore {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MonitoringJdbcStateStore.class);
 
     private EntityManager getEntityManager() {
         return FalconJPAService.get().getEntityManager();
@@ -263,6 +267,10 @@ public class MonitoringJdbcStateStore {
 
     public void putSLAAlertInstance(String entityName, String cluster, String entityType, Date nominalTime,
                                     Boolean isSLALowMissed, Boolean isSLAHighMissed) throws FalconException{
+
+        if(isSLAAlertInstancePresent(entityName, cluster, entityType, nominalTime)){
+            return;
+        }
         EntityManager entityManager = getEntityManager();
         EntitySLAAlertBean entitySLAAlertBean = new EntitySLAAlertBean();
         entitySLAAlertBean.setEntityName(entityName);
@@ -313,4 +321,12 @@ public class MonitoringJdbcStateStore {
         entityManager.getTransaction().begin();
     }
 
+    public boolean isSLAAlertInstancePresent(String entityName, String cluster, String entityType, Date nominalTime){
+        try{
+            getEntityAlertInstance(entityName, cluster, nominalTime, entityType);
+            return true;
+        } catch (Exception NoResultException){
+            return false;
+        }
+    }
 }
